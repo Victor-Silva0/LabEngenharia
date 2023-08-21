@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+
+<h1>Exercício 1</h1>
+    
+<p>Digite um valor: <input id="valor" name="valor"></p>
+
+<button type="button" onclick="adicionaTexto()">Adicionar</button>
+
+<h2>Valores Adicionados (Ordem Alfabética)</h2>
+<ul id="valoresAdicionados"></ul>
+
+<script language="javascript" type="text/javascript">
+    const array = [];
+
+    function adicionaTexto(){
+        const valorInput = document.getElementById('valor');
+        const valor = valorInput.value.trim();
+
+        if (valor !== "") {
+            array.push(valor);
+            valorInput.value = "";
+            array.sort();
+
+            atualizaValoresAdicionados();
+        }
+    }
+
+    function atualizaValoresAdicionados() {
+        const valoresAdicionadosList = document.getElementById('valoresAdicionados');
+        valoresAdicionadosList.innerHTML = "";
+
+        for (const valor of array) {
+            const liElement = document.createElement("li");
+            liElement.textContent = valor;
+            valoresAdicionadosList.appendChild(liElement);
+        }
+    }
+</script>
+
+<p><a href="../semana2.html">Voltar</a></p>
+
+</body>
+</html>
