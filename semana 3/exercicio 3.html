@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+
+<h1>Exercício 3</h1>
+<p>Digite uma palavra ou frase: <input id="texto" type="text"></p>
+<button onclick="verificarPalindromo()">Verificar</button>
+
+<script>
+    function verificarPalindromo() {
+        const inputText = document.getElementById("texto").value.toLowerCase().replace(/\s/g, "");
+        
+        if (inputText === "") {
+            alert("Por favor, digite um texto.");
+            return;
+        }
+        
+        const reversedText = inputText.split("").reverse().join("");
+        
+        if (inputText === reversedText) {
+            alert("O texto é um palíndromo!");
+        } else {
+            alert("O texto não é um palíndromo.");
+        }
+    }
+</script>
+<p><a href="../semana3.html">Voltar</a></p>
+
+</body>
+</html>

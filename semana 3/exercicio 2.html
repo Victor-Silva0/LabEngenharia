@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+
+<h1>Exercício 2</h1>
+    
+<p id="Visual"></p>
+
+
+<script language="javascript" type="text/javascript">
+
+function horaAtual()
+{
+    let data = new Date();
+    let hora = data.getHours();
+    let minuto = data.getMinutes();
+    let segundo = data.getSeconds();
+
+    hora = (hora < 10) ? "0" + hora : hora;
+    minuto = (minuto < 10) ? "0" + minuto : minuto;
+    segundo = (segundo < 10) ? "0" + segundo : segundo;
+
+    let tempo = hora + ":" + minuto + ":" + segundo;
+
+    document.getElementById("Visual").innerText = tempo;
+    var t = setTimeout(function() { horaAtual() }, 1000);
+}
+
+horaAtual();
+</script>
+
+<p><a href="../semana3.html">Voltar</a></p>
+
+</body>
+</html>
