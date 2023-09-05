@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+
+<h1>Exercício 1</h1>
+    
+<p>Nome Completo: <input id="nome" type="text" value=""></p>
+<p>Email: <input id="email" type="email" value=""></p>
+<p>Data Nascimento: <input id="data" type="date" value=""></p>
+<p>Telefone fixo: <input id="telFixo" type="tel" placeholder="(99)9999-9999"></p>
+<p>Telefone Celular: <input id="telCelular" type="tel" placeholder="(99)9999-9999"></p>
+<p>Tipo de cadastro: 
+    <input type="radio" id="professor" name="tipo" value="professor" onchange="hideB(this)">
+    <label for="professor">Professor</label>
+
+    <input type="radio" id="aluno" name="tipo" value="aluno" onchange="hideA(this)">
+    <label for="aluno">Aluno</label>
+</p>
+
+<div id="A">
+    <p>Área: <input id="area" name="prof" type="text" value=""></p>
+    <p>Lattes: <input id="lattes" name="prof" type="text" value=""></p>
+</div>
+
+<div id="B">
+    <p>Curso: <input id="curso" name="aluno" type="text" value=""></p>
+</div>
+
+<p>Matrícula: <input id="matricula" type="text" value=""></p>
+<button onclick="mostrarDados()">Enviar</button>
+<button onclick="limparCampos()">Redefinir</button>
+
+
+<div id="dadosExibidos">
+
+</div>
+
+<script language="javascript" type="text/javascript">
+
+function Pessoa()
+{
+    let nome;
+    this.setNome = function(nome)
+    {
+        this.nome = nome;
+    }
+    this.getNome = function()
+    {
+        return this.nome;
+    }
+    let data;
+    this.setData = function(data)
+    {
+        this.data = data;
+    }
+    this.getData = function()
+    {
+        return this.data;
+    }
+    let email;
+    this.setEmail = function(email)
+    {
+        this.email = email;
+    }
+    this.getEmail = function()
+    {
+        return this.email;
+    }
+    let telFixo;
+    this.setTelFixo = function(telFixo)
+    {
+        this.telFixo = telFixo;
+    }
+    this.getTelFixo = function()
+    {
+        return this.telFixo;
+    }
+    let telCelular;
+    this.setTelCelular = function(telCelular)
+    {
+        this.telCelular = telCelular;
+    }
+    this.getTelCelular = function()
+    {
+        return this.telCelular;
+    }
+    let matricula;
+    this.setMatricula = function(matricula)
+    {
+        this.matricula = matricula;
+    }
+    this.getMatricula = function()
+    {
+        return this.matricula;
+    }
+
+}
+
+function Aluno()
+{
+    Pessoa.call(this);
+    let curso;
+    this.setCurso = function(curso)
+    {
+        this.curso = curso;
+    }
+    this.getCurso = function()
+    {
+        return this.curso;
+    }
+}
+
+function Professor()
+{
+    Pessoa.call(this);
+    let area;
+    this.setArea = function(area)
+    {
+        this.area = area;
+    }
+    this.getArea = function()
+    {
+        return this.area;
+    }
+    let lattes;
+    this.setLattes = function(lattes)
+    {
+        this.lattes = lattes;
+    }
+    this.getLatess = function()
+    {
+        return this.lattes;
+    }
+}
+
+
+function hideA(x) {
+   if (x.checked) {
+     document.getElementById("A").style.visibility = "hidden";
+     document.getElementById("B").style.visibility = "visible";
+   }
+ }
+
+ function hideB(x) {
+   if (x.checked) {
+     document.getElementById("B").style.visibility = "hidden";
+     document.getElementById("A").style.visibility = "visible";
+   }
+ }
+
+ function mostrarDados()
+ {
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let data = document.getElementById("data").value;
+    let telFixo = document.getElementById("telFixo").value;
+    let telCelular = document.getElementById("telCelular").value;
+    let matricula = document.getElementById("matricula").value;
+
+    let tipoCadastro;
+    if (document.getElementById("professor").checked)
+    {
+        tipoCadastro = "professor";
+        let area = document.getElementById("area").value;
+        let lattes = document.getElementById("lattes").value;
+
+        document.getElementById("dadosExibidos").innerHTML = `
+            <p>Tipo de Cadastro: ${tipoCadastro}</p>
+            <p>Nome: ${nome}</p>
+            <p>Email: ${email}</p>
+            <p>Data de Nascimento: ${data}</p>
+            <p>Telefone Fixo: ${telFixo}</p>
+            <p>Telefone Celular: ${telCelular}</p>
+            <p>Matrícula: ${matricula}</p>
+            <p>Área: ${area}</p>
+            <p>Lattes: ${lattes}</p>
+        `;
+    }
+    else if (document.getElementById("aluno").checked) 
+    {
+        tipoCadastro = "aluno";
+        let curso = document.getElementById("curso").value;
+
+        document.getElementById("dadosExibidos").innerHTML = `
+            <p>Tipo de Cadastro: ${tipoCadastro}</p>
+            <p>Nome: ${nome}</p>
+            <p>Email: ${email}</p>
+            <p>Data de Nascimento: ${data}</p>
+            <p>Telefone Fixo: ${telFixo}</p>
+            <p>Telefone Celular: ${telCelular}</p>
+            <p>Matrícula: ${matricula}</p>
+            <p>Curso: ${curso}</p>
+        `;
+    }
+ }
+ function limparCampos() {
+    document.getElementById("nome").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("data").value = "";
+    document.getElementById("telFixo").value = "";
+    document.getElementById("telCelular").value = "";
+    document.getElementById("matricula").value = "";
+
+    if (document.getElementById("professor").checked) 
+    {
+        document.getElementById("area").value = "";
+        document.getElementById("lattes").value = "";
+    } 
+    else if (document.getElementById("aluno").checked) 
+    {
+        document.getElementById("curso").value = "";
+    }
+
+    document.getElementById("dadosExibidos").innerHTML = "";
+}
+
+
+</script>
+
+
+<p><a href="../semana4.html">Voltar</a></p>
+
+</body>
+</html>
