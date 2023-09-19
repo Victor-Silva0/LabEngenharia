@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <style>
+        .total
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: inline-block;
+            padding: 6px;
+            margin-top: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin-left: 50%;
+        }
+        #total {
+            text-align: center;
+        }
+        #espaco {
+            margin-left: 42%;
+        }
+        .container {
+            display: flex;
+        }
+        .homem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin-top: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .mulher {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin-top: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+            
+        }
+
+        .column {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 1rem 1rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Exercício 1</h1>
+    
+
+
+<div class="container">
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+
+const new_h1 = document.createElement("h1");
+const new_h2 = document.createElement("h1");
+
+new_h1.setAttribute("id", "total");
+new_h2.setAttribute("class","total");
+
+const new_h1_text = document.createTextNode("Total");
+const new_h2_text = document.createTextNode("0");
+
+new_h1.appendChild(new_h1_text);
+new_h2.appendChild(new_h2_text);
+
+
+document.body.appendChild(new_h1);
+document.body.appendChild(new_h2);
+
+
+const column1 = document.createElement("div");
+
+column1.setAttribute("id", "espaco");
+column1.setAttribute("class", "column");
+
+const container = document.querySelector(".container");
+container.appendChild(column1);
+
+const homemImg = document.createElement("img");
+const homemP1 = document.createElement("p");
+const homemMinus = document.createElement("button");
+const homemPlus = document.createElement("button");
+const homemP2 = document.createElement("p");
+const homemH1 = document.createElement("h1");
+
+homemImg.setAttribute("src","homem.PNG" );
+homemMinus.setAttribute("class", "homem-minus");
+homemPlus.setAttribute("class", "homem-plus");
+homemH1.setAttribute("class", "homem");
+
+const homemMinus_text = document.createTextNode("-");
+const homemPlus_text = document.createTextNode("+");
+const homemP2_text = document.createTextNode("Homens");
+const homemH1_text = document.createTextNode("0");
+
+homemMinus.appendChild(homemMinus_text);
+homemPlus.appendChild(homemPlus_text);
+homemP2.appendChild(homemP2_text);
+homemH1.appendChild(homemH1_text);
+
+document.getElementById("espaco").appendChild(homemImg);
+document.getElementById("espaco").appendChild(homemP1);
+document.getElementById("espaco").appendChild(homemMinus);
+document.getElementById("espaco").appendChild(homemPlus);
+document.getElementById("espaco").appendChild(homemP2);
+document.getElementById("espaco").appendChild(homemH1);
+
+const column2 = document.createElement("div");
+
+column2.setAttribute("id", "espaco2");
+column2.setAttribute("class", "column");
+
+container.appendChild(column2);
+
+const mulherImg = document.createElement("img");
+const mulherP1 = document.createElement("p");
+const mulherMinus = document.createElement("button");
+const mulherPlus = document.createElement("button");
+const mulherP2 = document.createElement("p");
+const mulherH1 = document.createElement("h1");
+
+mulherImg.setAttribute("src","mulher.PNG" );
+mulherMinus.setAttribute("class", "mulher-minus");
+mulherPlus.setAttribute("class", "mulher-plus");
+mulherH1.setAttribute("class", "mulher");
+
+const mulherMinus_text = document.createTextNode("-");
+const mulherPlus_text = document.createTextNode("+");
+const mulherP2_text = document.createTextNode("Mulheres");
+const mulherH1_text = document.createTextNode("0");
+
+mulherMinus.appendChild(mulherMinus_text);
+mulherPlus.appendChild(mulherPlus_text);
+mulherP2.appendChild(mulherP2_text);
+mulherH1.appendChild(mulherH1_text);
+
+document.getElementById("espaco2").appendChild(mulherImg);
+document.getElementById("espaco2").appendChild(mulherP1);
+document.getElementById("espaco2").appendChild(mulherMinus);
+document.getElementById("espaco2").appendChild(mulherPlus);
+document.getElementById("espaco2").appendChild(mulherP2);
+document.getElementById("espaco2").appendChild(mulherH1);
+
+
+let homemDisplayElem = document.querySelector('.homem');
+let homemMinusElem = document.querySelector('.homem-minus');
+let homemPlusElem = document.querySelector('.homem-plus');
+
+let mulherDisplayElem = document.querySelector('.mulher');
+let mulherMinusElem = document.querySelector('.mulher-minus');
+let mulherPlusElem = document.querySelector('.mulher-plus');
+
+let totalDisplayElem = document.querySelector('.total');
+
+let homem = 0;
+let mulher = 0;
+let total = 0;
+
+updateDisplay();
+
+homemPlusElem.addEventListener("click",()=>{
+    homem++;
+    total = homem + mulher;
+    updateDisplay();
+}) ;
+
+homemMinusElem.addEventListener("click",()=>{
+    if (homem > 0) 
+    {
+        homem--;
+        total = homem + mulher;
+        updateDisplay();
+    }
+});
+
+mulherPlusElem.addEventListener("click",()=>{
+    mulher++;
+    total = homem + mulher;
+    updateDisplay();
+}) ;
+
+mulherMinusElem.addEventListener("click",()=>{
+    if (mulher > 0)
+    {
+        mulher--;
+        total = homem + mulher;
+        updateDisplay();
+    }
+});
+
+function updateDisplay(){
+    homemDisplayElem.innerHTML = homem;
+    mulherDisplayElem.innerHTML = mulher;
+    totalDisplayElem.innerHTML = total;
+};
+
+</script>
+
+<p><a href="../semana5.html">Voltar</a></p>
+
+</body>
+</html>

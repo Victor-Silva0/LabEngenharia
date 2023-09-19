@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <style>
+        .total
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: inline-block;
+            padding: 6px;
+            margin-top: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin-left: 50%;
+        }
+        #total {
+            text-align: center;
+        }
+        #espaco {
+            margin-left: 42%;
+        }
+        .container {
+            display: flex;
+        }
+        .homem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin-top: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .mulher {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+            margin-top: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+            
+        }
+
+        .column {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 1rem 1rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Exercício 1</h1>
+    
+<h1 id="total">Total</h1>
+<h1 class="total">0</h1>
+
+<div class="container">
+    <div id="espaco" class="column">
+        <img src="homem.PNG">
+        <p></p>
+        <button class="homem-minus">-</button>
+        <button class="homem-plus">+</button>
+        <p>Homens</p>
+        <h1 class="homem">0</h1>
+    </div>
+    <div class="column">
+        <img src="mulher.PNG">
+        <p></p>
+        <button class="mulher-minus">-</button>
+        <button class="mulher-plus">+</button>
+        <p>Mulheres</p>
+        <h1 class="mulher">0</h1>
+    </div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+let homemDisplayElem = document.querySelector('.homem');
+let homemMinusElem = document.querySelector('.homem-minus');
+let homemPlusElem = document.querySelector('.homem-plus');
+
+let mulherDisplayElem = document.querySelector('.mulher');
+let mulherMinusElem = document.querySelector('.mulher-minus');
+let mulherPlusElem = document.querySelector('.mulher-plus');
+
+let totalDisplayElem = document.querySelector('.total');
+
+let homem = 0;
+let mulher = 0;
+let total = 0;
+
+updateDisplay();
+
+homemPlusElem.addEventListener("click",()=>{
+    homem++;
+    total = homem + mulher;
+    updateDisplay();
+}) ;
+
+homemMinusElem.addEventListener("click",()=>{
+    if (homem > 0) 
+    {
+        homem--;
+        total = homem + mulher;
+        updateDisplay();
+    }
+});
+
+mulherPlusElem.addEventListener("click",()=>{
+    mulher++;
+    total = homem + mulher;
+    updateDisplay();
+}) ;
+
+mulherMinusElem.addEventListener("click",()=>{
+    if (mulher > 0)
+    {
+        mulher--;
+        total = homem + mulher;
+        updateDisplay();
+    }
+});
+
+function updateDisplay(){
+    homemDisplayElem.innerHTML = homem;
+    mulherDisplayElem.innerHTML = mulher;
+    totalDisplayElem.innerHTML = total;
+};
+
+
+</script>
+
+<p><a href="../semana5.html">Voltar</a></p>
+
+</body>
+</html>
