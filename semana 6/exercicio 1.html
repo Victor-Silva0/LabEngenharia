@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Exercício 1</h1>
+    
+<div class="container">
+    
+</div>
+
+<script language="javascript" type="text/javascript">
+
+const resultado = document.createElement("div");
+
+resultado.setAttribute("class", "result")
+
+const span1 = document.createElement("span");
+
+const span1_text = document.createTextNode("0");
+
+span1.appendChild(span1_text);
+
+const container = document.querySelector(".container");
+container.appendChild(resultado);
+
+const div1 = document.querySelector(".result");
+div1.appendChild(span1);
+
+const botoes = document.createElement("div");
+
+botoes.setAttribute("class", "buttons")
+
+container.appendChild(botoes);
+
+const botaoAC = document.createElement("button");
+const botaoNegative = document.createElement("button");
+const botaoPorcentagem = document.createElement("button");
+const botaoDivide = document.createElement("button");
+const botao7 = document.createElement("button");
+const botao8 = document.createElement("button");
+const botao9 = document.createElement("button");
+const botaoMultiply = document.createElement("button");
+const botao4 = document.createElement("button");
+const botao5 = document.createElement("button");
+const botao6 = document.createElement("button");
+const botaoMinus = document.createElement("button");
+const botao1 = document.createElement("button");
+const botao2 = document.createElement("button");
+const botao3 = document.createElement("button");
+const botaoPlus = document.createElement("button");
+const botao0 = document.createElement("button");
+const botaoComma = document.createElement("button");
+const botaoEqual = document.createElement("button");
+
+botaoAC.setAttribute("class", "item item1 clear");
+botaoAC.setAttribute("value", "AC");
+botaoNegative.setAttribute("class", "item item1 negative");
+botaoNegative.setAttribute("value", "*-1");
+botaoPorcentagem.setAttribute("class", "item percent sign");
+botaoPorcentagem.setAttribute("value", "%");
+botaoDivide.setAttribute("class", "item item3 sign");
+botaoDivide.setAttribute("value", "/");
+botao7.setAttribute("class", "item numbers");
+botao7.setAttribute("value", "7");
+botao8.setAttribute("class", "item numbers");
+botao8.setAttribute("value", "8");
+botao9.setAttribute("class", "item numbers");
+botao9.setAttribute("value", "9");
+botaoMultiply.setAttribute("class", "item item3 sign");
+botaoMultiply.setAttribute("value", "x");
+botao4.setAttribute("class", "item numbers");
+botao4.setAttribute("value", "4");
+botao5.setAttribute("class", "item numbers");
+botao5.setAttribute("value", "5");
+botao6.setAttribute("class", "item numbers");
+botao6.setAttribute("value", "6");
+botaoMinus.setAttribute("class", "item item3 sign");
+botaoMinus.setAttribute("value", "-");
+botao1.setAttribute("class", "item numbers");
+botao1.setAttribute("value", "1");
+botao2.setAttribute("class", "item numbers");
+botao2.setAttribute("value", "2");
+botao3.setAttribute("class", "item numbers");
+botao3.setAttribute("value", "3");
+botaoPlus.setAttribute("class", "item item3 sign");
+botaoPlus.setAttribute("value", "+");
+botao0.setAttribute("class", "item itemZero numbers");
+botao0.setAttribute("value", "0");
+botaoComma.setAttribute("class", "item comma");
+botaoComma.setAttribute("value", ",");
+botaoEqual.setAttribute("class", "item item3 equals");
+botaoEqual.setAttribute("value", "=");
+
+const botaoAC_text = document.createTextNode("AC");
+const botaoNegative_text = document.createTextNode("+/-");
+const botaoPorcentagem_text = document.createTextNode("%");
+const botaoDivide_text = document.createTextNode("/");
+const botao7_text = document.createTextNode("7");
+const botao8_text = document.createTextNode("8");
+const botao9_text = document.createTextNode("9");
+const botaoMultiply_text = document.createTextNode("X");
+const botao4_text = document.createTextNode("4");
+const botao5_text = document.createTextNode("5");
+const botao6_text = document.createTextNode("6");
+const botaoMinus_text = document.createTextNode("-");
+const botao1_text = document.createTextNode("1");
+const botao2_text = document.createTextNode("2");
+const botao3_text = document.createTextNode("3");
+const botaoPlus_text = document.createTextNode("+");
+const botao0_text = document.createTextNode("0");
+const botaoComma_text = document.createTextNode(",");
+const botaoEqual_text = document.createTextNode("=");
+
+botaoAC.appendChild(botaoAC_text);
+botaoNegative.appendChild(botaoNegative_text);
+botaoPorcentagem.appendChild(botaoPorcentagem_text);
+botaoDivide.appendChild(botaoDivide_text);
+botao7.appendChild(botao7_text);
+botao8.appendChild(botao8_text);
+botao9.appendChild(botao9_text);
+botaoMultiply.appendChild(botaoMultiply_text);
+botao4.appendChild(botao4_text);
+botao5.appendChild(botao5_text);
+botao6.appendChild(botao6_text);
+botaoMinus.appendChild(botaoMinus_text);
+botao1.appendChild(botao1_text);
+botao2.appendChild(botao2_text);
+botao3.appendChild(botao3_text);
+botaoPlus.appendChild(botaoPlus_text);
+botao0.appendChild(botao0_text);
+botaoComma.appendChild(botaoComma_text);
+botaoEqual.appendChild(botaoEqual_text);
+
+const div2 = document.querySelector(".buttons");
+div2.appendChild(botaoAC);
+div2.appendChild(botaoNegative);
+div2.appendChild(botaoPorcentagem);
+div2.appendChild(botaoDivide);
+div2.appendChild(botao7);
+div2.appendChild(botao8);
+div2.appendChild(botao9);
+div2.appendChild(botaoMultiply);
+div2.appendChild(botao4);
+div2.appendChild(botao5);
+div2.appendChild(botao6);
+div2.appendChild(botaoMinus);
+div2.appendChild(botao1);
+div2.appendChild(botao2);
+div2.appendChild(botao3);
+div2.appendChild(botaoPlus);
+div2.appendChild(botao0);
+div2.appendChild(botaoComma);
+div2.appendChild(botaoEqual);
+
+    const numbers = document.querySelectorAll('.numbers');
+    const result = document.querySelector('.result span');
+    const signs = document.querySelectorAll('.sign');
+    const equals = document.querySelector('.equals');
+    const clear = document.querySelector(".clear");
+    const negative = document.querySelector('.negative');
+    const percent = document.querySelector(".percent");
+    const comma = document.querySelector(".comma");
+
+let firstValue = "";
+let isFirstValue = false;
+let secondValue = "";
+let isSecondValue = false;
+let sign = "";
+let resultValue = 0;
+
+for(let i = 0; i < numbers.length; i++) {
+    numbers[i].addEventListener('click', (e) => {
+        let atr = e.target.getAttribute('value');
+        if(isFirstValue === false) {
+            getFirstValue(atr)
+        }
+        if(isSecondValue == false) {
+            getSecondValue(atr);
+        }
+    })
+}
+
+function getFirstValue(el) {
+    result.innerHTML = "";
+    firstValue += el;
+    result.innerHTML = firstValue;
+    firstValue = +firstValue;
+}
+
+function getSecondValue(el) {
+    if(firstValue != "" && sign != "") {
+        secondValue += el;
+        result.innerHTML = secondValue;
+        secondValue = +secondValue;
+    }
+}
+
+function getSign() {
+    for(let i = 0; i < signs.length; i++) {
+        signs[i].addEventListener('click', (e) => {
+            sign = e.target.getAttribute('value');
+            isFirstValue = true;
+        })
+    }
+}
+getSign();
+
+equals.addEventListener('click', () => {
+    result.innerHTML = "";
+    if(sign === "+") {
+        resultValue = firstValue + secondValue;
+    }
+    else if(sign === "-") {
+        resultValue = firstValue - secondValue;
+    }
+    else if(sign === "x") {
+        resultValue = firstValue * secondValue;
+    }
+    else if(sign === "/") {
+        resultValue = firstValue / secondValue;
+    }
+    result.innerHTML = resultValue;
+    firstValue = resultValue;
+    secondValue = "";
+
+    checkResultLength();
+})
+
+function checkResultLength() {
+    resultValue = JSON.stringify(resultValue);
+
+    if(resultValue.length >= 8 )
+    {
+        resultValue = JSON.parse(resultValue);
+        result.innerHTML = resultValue.toFixed(5);
+    }
+}
+
+negative.addEventListener('click', () => {
+    result.innerHTML = "";
+    if(firstValue != "") {
+        resultValue = -firstValue;
+        firstValue = resultValue;
+    }
+    if(firstValue != "" && secondValue != "" && sign != "") {
+        resultValue = -resultValue;
+    }
+    result.innerHTML = resultValue;
+})
+
+percent.addEventListener('click', () => {
+    result.innerHTML = "";
+    if(firstValue != "") {
+        resultValue = firstValue / 100;
+        firstValue = resultValue;
+    }
+    if(firstValue != "" && secondValue != "" && sign != "") {
+        resultValue = resultValue / 100;
+    }
+    result.innerHTML = resultValue;
+})
+
+comma.addEventListener('click', () => {
+    result.innerHTML = "";
+    if(firstValue != "") {
+        resultValue = firstValue + ".";
+        firstValue = resultValue;
+    }
+    if(firstValue != "" && secondValue != "" && sign != "") {
+        resultValue = resultValue + ".";
+    }
+    result.innerHTML = resultValue;
+})
+
+clear.addEventListener('click', () => {
+    result.innerHTML = 0;
+
+    firstValue = "";
+    isFirstValue = false;
+    secondValue = "";
+    isSecondValue = false;
+    sign = "";
+    resultValue = 0;
+})
+</script>
+
+<p><a href="../semana6.html">Voltar</a></p>
+
+</body>
+</html>
