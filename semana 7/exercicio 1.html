@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    
+<h1>Exercício 1</h1>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const { useState, useEffect } = React;
+    const { createRoot } = ReactDOM;
+
+    function TextAnimation() {
+      const [text, setText] = useState("");
+      const [index, setIndex] = useState(0);
+
+      useEffect(() => {
+        const textoCompleto = "Venha estudar na Fatec";
+
+        if (index < textoCompleto.length) {
+          setTimeout(() => {
+            setText(textoCompleto.slice(0, index + 1));
+            setIndex(index + 1);
+          }, 1000);
+        }
+      }, [index]);
+
+      return (
+        <div id="text-container">
+          {text}
+        </div>
+      );
+    }
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<TextAnimation />);
+  </script>
+    <p><a href="../semana7.html">Voltar</a></p>
+</body>
+</html>
